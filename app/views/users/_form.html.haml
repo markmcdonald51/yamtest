@@ -1,0 +1,20 @@
+- form.inputs do
+  - if resource.start? || resource.active? 
+    = form.input :email, :label => 'Email'
+
+  - if resource.inactive? || resource.active? 
+    - form.inputs :name => 'Basic Information' do
+      = form.input :first_name, :label => 'First name'
+      = form.input :last_name, :label => 'Last name'
+      = form.input :password
+
+  - if resource.updated_user_info? || resource.active?  
+    = form.input :birth_date, :label => 'Birth date'
+    = form.input :location, :label => 'Location', :hint => 'where were you born?'
+
+    %p
+      Prior companies you worked for (up to seven)
+      
+    - form.semantic_fields_for :job_histories do |job|
+      - job.inputs :name => 'Company Profile' do
+        = job.inputs :company, :title

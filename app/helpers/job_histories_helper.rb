@@ -1,0 +1,3 @@
+module JobHistoriesHelper
+  
+end

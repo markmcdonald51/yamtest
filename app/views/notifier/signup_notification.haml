@@ -1,0 +1,5 @@
+= @account.email,
+Thanks for joining our service! Please check back often.
+
+= link_to 'Click here to activate', start_activation_url(:host => 'localhost:3000', :c=>@account.activation_code)
+

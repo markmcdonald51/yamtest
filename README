@@ -1,0 +1,7 @@
+To run:
+
+rake gems:install
+rake db:migrate
+./script/server
+
+go to: http://localhost:3000

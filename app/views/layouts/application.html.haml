@@ -1,0 +1,22 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
+  %head
+    %title
+      = h(yield(:title) || "Yam Test")
+    = stylesheet_link_tag 'scaffold', 'base', 'formtastic', 'formtastic_changes', :cached => 'main'
+    = javascript_include_tag :all
+
+    %body
+      #container
+        #header
+        = link_to 'logout', logout_path if current_user
+
+
+    #title
+      %h3= h(yield(:title))
+
+    #content
+      = yield
+      
+.footer    
+    

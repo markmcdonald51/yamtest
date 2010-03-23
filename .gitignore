@@ -1,0 +1,11 @@
+log/*.log
+log/searchd.development.pid
+*~
+tmp/**/*
+db/sphinx/**/*
+doc/api
+doc/app
+**~
+config/development.sphinx.conf
+config/initializers/geokit_config.rb
+

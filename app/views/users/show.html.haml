@@ -1,0 +1,19 @@
+%h1.heading
+  = "User %s" % resource.id
+  
+- content_tag_for(:dl, resource) do
+  %dt.label= 'Email'
+  %dd.email= h resource.try(:email)
+  %dt.label= 'First name'
+  %dd.first_name= h resource.try(:first_name)
+  %dt.label= 'Last name'
+  %dd.last_name= h resource.try(:last_name)
+  %dt.label= 'Birth date'
+  %dd.birth_date= h resource.try(:birth_date)
+  %dt.label= 'Location'
+  %dd.location= h resource.try(:location)
+  
+%p.actions
+  = link_to 'Edit', edit_resource_path(resource)
+  |
+  = link_to 'Index', collection_path

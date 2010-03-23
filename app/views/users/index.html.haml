@@ -1,0 +1,20 @@
+%h1.heading
+  = "Users"
+  
+%p.actions
+  = link_to 'New User', new_resource_path
+  
+%table
+  %thead.header
+    %tr
+      %th.email= 'Email'
+      %th.first_name= 'First name'
+      %th.last_name= 'Last name'
+      %th.birth_date= 'Birth date'
+      %th.location= 'Location'
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      
+= will_paginate(collection)
